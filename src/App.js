@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import ProductDetail from "./pages/ProductDetail";
+import ShoppingBasket from "./pages/ShoppingBasket";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Link to="/">홈</Link>
+        <Link to="/product">상세페이지</Link>
+        <Link to="/basket">장바구니</Link>
+
+        {/* v5 Switch == v6 Routes, v5 component == v6 element */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<ProductDetail />} />
+          <Route path="/basket" element={<ShoppingBasket />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
