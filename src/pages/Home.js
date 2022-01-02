@@ -1,15 +1,13 @@
-import React from "react";
-import { getThemes } from "../apis/ShoppingAPI";
+import HeaderTitle from "../components/HeaderTitle";
+import PopularThemes from "../components/PopularThemes";
+import ProductsByTheme from "../components/ProductsByTheme";
 
 function Home() {
-  getThemes(
-    ({ data }) => console.log(data),
-    () => console.log("데이터를 불러오는 중 오류가 발생했습니다.")
-  );
-
   return (
     <div>
-      <h1>메인 페이지</h1>
+      <HeaderTitle title="토멘코 쇼핑" />
+      <PopularThemes />
+      <ProductsByTheme />
     </div>
   );
 }
