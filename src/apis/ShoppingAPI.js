@@ -13,3 +13,8 @@ export function getThemes(success, fail) {
 export function getThemeProducts(themeId, success, fail) {
   api.get(`themes/${themeId}/products`).then(success).catch(fail);
 }
+
+// 상품Id에 해당하는 상품 상세 설명 불러오기
+export function getProductDetail(productId, success, fail) {
+  api.get(`products/${productId}`).then(success).catch(fail);
+}

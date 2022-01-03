@@ -5,6 +5,8 @@ const GlobalStyles = createGlobalStyle`
   ${reset}
   * {
     font-family: "Noto Sans KR";
+    text-decoration: none;
+    color: #000000;
   }
 `;
 

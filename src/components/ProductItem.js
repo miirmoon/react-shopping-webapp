@@ -1,3 +1,6 @@
+/** 메인 - 상품목록 - 하나의 상품을 표현하기 위한 컴포넌트 */
+
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Box = styled.div`
@@ -24,9 +27,11 @@ const Description = styled.div`
 function ProductItem(props) {
   return (
     <Box>
-      <Thumbnail src={props.product.thumbnail} />
-      <Title>{props.product.name}</Title>
-      <Description>{props.product.description}</Description>
+      <Link to={`/product/${props.product.id}`}>
+        <Thumbnail src={props.product.thumbnail} />
+        <Title>{props.product.name}</Title>
+        <Description>{props.product.description}</Description>
+      </Link>
     </Box>
   );
 }
