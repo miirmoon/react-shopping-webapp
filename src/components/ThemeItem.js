@@ -6,13 +6,18 @@ const Box = styled.div`
   border-radius: 10px;
   font-weight: 700;
   color: #ffffff;
-  font-size: 17px;
+  font-size: 16px;
+  cursor: pointer;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(${(props) => props.img});
 `;
 
 function ThemeItem(props) {
-  return <Box img={props.theme.thumbnail}>#{props.theme.name}</Box>;
+  return (
+    <Box img={props.theme.thumbnail} onClick={props.onClick}>
+      #{props.theme.name}
+    </Box>
+  );
 }
 
 export default ThemeItem;
