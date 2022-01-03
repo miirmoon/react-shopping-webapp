@@ -1,13 +1,11 @@
 import HeaderTitle from "../components/HeaderTitle";
-import PopularThemes from "../components/PopularThemes";
-import ProductsByTheme from "../components/ProductsByTheme";
+import Products from "../components/Products";
 
 function Home() {
   return (
     <div>
       <HeaderTitle title="토멘코 쇼핑" />
-      <PopularThemes />
-      <ProductsByTheme />
+      <Products />
     </div>
   );
 }
