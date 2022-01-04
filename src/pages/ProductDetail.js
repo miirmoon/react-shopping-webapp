@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProductDetail } from "../apis/ShoppingAPI";
 import HeaderTitle from "../components/HeaderTitle";
-import ProductDetailComp from "../components/ProductDetailComp";
+import ProductDetailComp from "../components/ProductDetail/ProductDetailComp";
 
 function ProdectDetail() {
   const productId = useParams().id;
