@@ -18,3 +18,8 @@ export function getThemeProducts(themeId, success, fail) {
 export function getProductDetail(productId, success, fail) {
   api.get(`products/${productId}`).then(success).catch(fail);
 }
+
+// 상품Id에 해당하는 후기 불러오기
+export function getProductReviews(productId, success, fail) {
+  api.get(`reviews/${productId}`).then(success).catch(fail);
+}

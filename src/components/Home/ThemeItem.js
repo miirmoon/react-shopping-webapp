@@ -1,3 +1,5 @@
+/** 메인 - 테마목록 - 하나의 테마를 표현하기 위한 컴포넌트 */
+
 import styled from "styled-components";
 
 const Box = styled.div`

@@ -1,5 +1,10 @@
+/** 메인 - 테마 목록과 상품 목록을 표현하기 위한 컴포넌트
+ *  - PopularThemes 스타일과 ThemeItem 컴포넌트를 이용하여 테마 목록 표현
+ *  - ProductsByTheme 컴포넌트를 이용하여 상품 목록 표현
+ */
+
 import { useState, useEffect } from "react";
-import { getThemes } from "../apis/ShoppingAPI";
+import { getThemes } from "../../apis/ShoppingAPI";
 import styled from "styled-components";
 import ThemeItem from "./ThemeItem";
 import ProductsByTheme from "./ProductsByTheme";
