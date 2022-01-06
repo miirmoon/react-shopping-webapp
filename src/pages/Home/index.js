@@ -1,5 +1,5 @@
-import HeaderTitle from "../components/HeaderTitle";
-import Products from "../components/Home/Products";
+import HeaderTitle from "components/HeaderTitle";
+import Products from "./components/Products";
 
 function Home() {
   return (

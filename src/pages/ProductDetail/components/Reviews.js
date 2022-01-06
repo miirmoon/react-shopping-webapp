@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { getProductReviews } from "../../apis/ShoppingAPI";
+import { getProductReviews } from "apis/ShoppingAPI";
 import ReviewItem from "./ReviewItem";
 
 const Box = styled.div`
