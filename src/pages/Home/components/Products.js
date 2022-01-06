@@ -2,7 +2,6 @@
  *  - PopularThemes 스타일과 ThemeItem 컴포넌트를 이용하여 테마 목록 표현
  *  - ProductsByTheme 컴포넌트를 이용하여 상품 목록 표현
  */
-
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { getThemeProducts } from "apis/ShoppingAPI";
