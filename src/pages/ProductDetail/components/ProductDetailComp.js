@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react/cjs/react.development";
+/** 상품 상세정보의 주 내용을 담고있는 컴포넌트 */
+
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import DescAndReview from "./DescAndReview";
-import BtnFixedBottom from "../../styles/BtnFixedBottom";
+import BtnFixedBottom from "../../../styles/BtnFixedBottom";
 
 const Box = styled.div`
   margin: 50px auto;
@@ -13,8 +15,6 @@ const Thumbnail = styled.img`
   width: 100%;
   height: 350px;
 `;
-
-/** 상품 상세정보의 주 내용을 담고있는 컴포넌트 */
 
 const Title = styled.div`
   padding: 20px;

@@ -4,7 +4,7 @@
 
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { getThemeProducts } from "../../apis/ShoppingAPI";
+import { getThemeProducts } from "../../../apis/ShoppingAPI";
 import ProductItem from "./ProductItem";
 
 const Box = styled.div`
