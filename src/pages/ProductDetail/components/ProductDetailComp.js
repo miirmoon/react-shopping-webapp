@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import DescAndReview from "./DescAndReview";
-import BtnFixedBottom from "../../../styles/BtnFixedBottom";
+import BtnFixedBottom from "styles/BtnFixedBottom";
 
 const Box = styled.div`
   margin: 50px auto;

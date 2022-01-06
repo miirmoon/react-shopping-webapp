@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from "react";
-import { getThemes } from "../../../apis/ShoppingAPI";
+import { getThemes } from "apis/ShoppingAPI";
 import styled from "styled-components";
 import ThemeItem from "./ThemeItem";
 import ProductsByTheme from "./ProductsByTheme";

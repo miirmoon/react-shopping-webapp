@@ -1,4 +1,4 @@
-import HeaderTitle from "../../components/HeaderTitle";
+import HeaderTitle from "components/HeaderTitle";
 import Products from "./components/Products";
 
 function Home() {
