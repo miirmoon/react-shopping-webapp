@@ -1,5 +1,5 @@
 /** 페이지 상단 제목을 표현하기 위한 컴포넌트 */
-
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { IoIosArrowBack } from "react-icons/io";
 
@@ -25,26 +25,16 @@ const PrevIcon = styled.div`
   left: 0;
   cursor: pointer;
   z-index: 2;
-
-  // .icon {
-  //   color: blue;
-  // }
-
-  // &:hover .icon {
-  //   color: red;
-  // }
 `;
 
 function HeaderTitle(props) {
-  function movePrev() {
-    console.log("movemove!");
-  }
+  const navigate = useNavigate();
 
   return (
     <div>
       {props.prev ? (
-        <PrevIcon onClick={movePrev}>
-          <IoIosArrowBack className="icon" />
+        <PrevIcon onClick={() => navigate(-1)}>
+          <IoIosArrowBack />
         </PrevIcon>
       ) : null}
       <Header>{props.title}</Header>
