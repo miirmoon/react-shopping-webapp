@@ -65,5 +65,3 @@ https://miirmoon.github.io/react-shopping-webapp/
      // v6
      <Route path="/product/:id" element={<ProductDetail />} />
      ```
-
-     
