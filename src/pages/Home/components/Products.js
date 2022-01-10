@@ -2,11 +2,11 @@
  *  - PopularThemes 스타일과 ThemeItem 컴포넌트를 이용하여 테마 목록 표현
  *  - ProductsByTheme 컴포넌트를 이용하여 상품 목록 표현
  */
-
 import { useState, useEffect } from "react";
-import { getThemes } from "apis/ShoppingAPI";
 import styled from "styled-components";
+import { getThemeProducts } from "apis/ShoppingAPI";
 import ThemeItem from "./ThemeItem";
+
 import ProductsByTheme from "./ProductsByTheme";
 
 const PopularThemes = styled.div`
@@ -15,26 +15,27 @@ const PopularThemes = styled.div`
   border-bottom: 8px solid #eeeeee;
 `;
 
-function Products() {
-  const [themeList, setThemeList] = useState([]);
+function Products(props) {
   const [themeId, setThemeId] = useState(1);
-
-  useEffect(() => {
-    getThemes(
-      ({ data }) => setThemeList(data.themes),
-      () => console.log("테마 목록을 불러오는 중 오류가 발생했습니다.")
-    );
-  }, []);
+  const [productList, setProductList] = useState([]);
 
   function showProductsByTheme(id) {
     setThemeId(id);
   }
 
+  useEffect(() => {
+    getThemeProducts(
+      themeId,
+      ({ data }) => setProductList(data.products),
+      () => console.log("상품 목록을 불러오는 중 오류가 발생했습니다.")
+    );
+  }, [themeId]);
+
   return (
     <div>
       <PopularThemes>
-        {themeList ? (
-          themeList.map((theme) => {
+        {props.themeList ? (
+          props.themeList.map((theme) => {
             return (
               <ThemeItem
                 theme={theme}
@@ -47,7 +48,7 @@ function Products() {
           <div>테마가 없습니다.</div>
         )}
       </PopularThemes>
-      <ProductsByTheme themeId={themeId} />
+      <ProductsByTheme productList={productList} />
     </div>
   );
 }

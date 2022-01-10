@@ -1,6 +1,7 @@
 /** 상품 상세정보의 주 내용을 담고있는 컴포넌트 */
 
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import DescAndReview from "./DescAndReview";
 import BtnFixedBottom from "styles/BtnFixedBottom";
@@ -27,6 +28,7 @@ const Name = styled.div`
 `;
 
 function ProductDetailComp(props) {
+  const navigate = useNavigate();
   const [changedPrice, setChangedPrice] = useState("");
 
   useEffect(() => {
@@ -40,6 +42,23 @@ function ProductDetailComp(props) {
     }
   }, [props.product]);
 
+  // 장바구니에 상품 추가하기(로컬 스토리지 이용)
+  function addToBasket() {
+    let newbasket = JSON.parse(localStorage.getItem("basket"));
+    if (!newbasket) newbasket = [];
+    newbasket.push(props.product.id);
+
+    localStorage.setItem("basket", JSON.stringify(newbasket));
+
+    if (
+      window.confirm(
+        "상품을 장바구니에 담았습니다. 장바구니를 확인하시겠습니까?"
+      )
+    ) {
+      navigate("/basket");
+    }
+  }
+
   return (
     <div>
       <Box>
@@ -50,7 +69,7 @@ function ProductDetailComp(props) {
         </Title>
         <DescAndReview product={props.product} />
       </Box>
-      <BtnFixedBottom>장바구니 담기</BtnFixedBottom>
+      <BtnFixedBottom onClick={addToBasket}>장바구니 담기</BtnFixedBottom>
     </div>
   );
 }
